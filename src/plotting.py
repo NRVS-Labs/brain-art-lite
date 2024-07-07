@@ -5,7 +5,6 @@ import brainflow
 from brainflow.board_shim import BoardShim
 from brainflow.data_filter import DataFilter, AggOperations, FilterTypes, NoiseTypes
 import pandas as pd
-# from alive_progress import alive_bar
 
 import matplotlib.pyplot as plt
 

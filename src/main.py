@@ -290,7 +290,7 @@ class BrowserUI:
 
             # --------------------------------------------------------------
             # Configure Image Output Directory
-            default_image_directory = os.path.join(self.current_working_directory, "generated", "images")
+            default_image_directory = os.path.join(self.current_working_directory, "local_gen")
 
             self.image_directory = st.text_input("Current Image Output Directory: ", default_image_directory, help="Enter the directory where you would like to save generated images. Change nothing if you are fine with the default configuration.")
 
@@ -431,7 +431,7 @@ class BrowserUI:
                 if self.image_name not in ["None", ""]:
             
                     st.write("Image will be generated below, this may take a moment.")
-                
+
                     image_path = self.generate_image(resolution=(1920, 1080), 
                                                     features=feature_vector, 
                                                     num_layers=10, 
