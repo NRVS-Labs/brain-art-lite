@@ -16,6 +16,7 @@
 import numpy as np
 import os
 import streamlit as st
+import cv2
 # ----------------------------------------------------------
 
 # File Utilities
@@ -264,8 +265,6 @@ class NumpyArtGenerator:
         """
         Generates an image using the data and saves it to the output directory
         """
-        import cv2
-
         if not self.complete:
             raise Exception("Cannot save image before running the generator. Run the generator first using the run() method.")
         
@@ -278,9 +277,11 @@ class NumpyArtGenerator:
 
             return file_full_path
         except:
-            print(f"Failed to save file at {file_full_path}")
-            print(f"Current Directory is {os.getcwd()}")
-            print(f"Current directory contents is {os.listdir()}")
+            raise Exception(f"""
+            Failed to save file at {file_full_path}
+            Current Directory is {os.getcwd()}
+            Current directory contents is {os.listdir()}
+            """)
 
 if __name__ == "__main__":
 
