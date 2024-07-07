@@ -34,6 +34,7 @@ class BrowserUI:
         from PIL import Image
         logo_path = os.path.join(self.current_file_path_directory, "local_assets", "logo.png")
 
+
         LOGO = Image.open(logo_path)
         col1, col2, col3 = st.columns([5, 5, 5])
         col2.image(image=LOGO, caption="NRVS Labs", width=200)
@@ -290,7 +291,8 @@ class BrowserUI:
 
             # --------------------------------------------------------------
             # Configure Image Output Directory
-            default_image_directory = os.path.join(self.current_working_directory, "src"+os.sep+"local_gen")
+
+            default_image_directory = os.path.join(self.current_file_path_directory, "local_gen")
 
             self.image_directory = st.text_input("Current Image Output Directory: ", default_image_directory, help="Enter the directory where you would like to save generated images. Change nothing if you are fine with the default configuration.")
 

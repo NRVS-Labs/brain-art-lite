@@ -272,10 +272,15 @@ class NumpyArtGenerator:
         file_full_path = os.path.join(output_directory, filename)
         print("\nSaving image to " + file_full_path)
 
-        data = self.results
-        cv2.imwrite(file_full_path, data, [int(cv2.IMWRITE_JPEG_QUALITY), 100])
+        try:
+            data = self.results
+            cv2.imwrite(file_full_path, data, [int(cv2.IMWRITE_JPEG_QUALITY), 100])
 
-        return file_full_path
+            return file_full_path
+        except:
+            print(f"Failed to save file at {file_full_path}")
+            print(f"Current Directory is {os.getcwd()}")
+            print(f"Current directory contents is {os.listdir()}")
 
 if __name__ == "__main__":
 
