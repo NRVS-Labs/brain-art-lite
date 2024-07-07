@@ -2,11 +2,6 @@
 
 An exploration into pairing Creative Neural Networks with actual neural networks in the human brain using interpreted brain activity
 
-## Setup
-
-Download the BrainArt repository either by:
-* Downloading the zip file by clicking `Code` and then `Download Zip`
-
 ## Roadmap
 
 We are actively working on improving the intentionality of Brain Generated Artwork! We are working towards in the future adding:
