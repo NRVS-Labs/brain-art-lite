@@ -269,11 +269,9 @@ class NumpyArtGenerator:
         if not self.complete:
             raise Exception("Cannot save image before running the generator. Run the generator first using the run() method.")
         
-        output_directory_fullpath = make_dir(output_directory)
+        file_full_path = os.path.join(output_directory, filename)
+        print("\nSaving image to " + file_full_path)
 
-        print("\nSaving image to " + output_directory + ": " + filename)
-
-        file_full_path = os.path.join(output_directory_fullpath, filename)
         data = self.results
         cv2.imwrite(file_full_path, data, [int(cv2.IMWRITE_JPEG_QUALITY), 100])
 

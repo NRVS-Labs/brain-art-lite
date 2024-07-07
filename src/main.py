@@ -290,7 +290,7 @@ class BrowserUI:
 
             # --------------------------------------------------------------
             # Configure Image Output Directory
-            default_image_directory = os.path.join(self.current_working_directory, "local_gen")
+            default_image_directory = os.path.join(self.current_working_directory, "src"+os.sep+"local_gen")
 
             self.image_directory = st.text_input("Current Image Output Directory: ", default_image_directory, help="Enter the directory where you would like to save generated images. Change nothing if you are fine with the default configuration.")
 
