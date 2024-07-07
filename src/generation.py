@@ -275,7 +275,10 @@ class NumpyArtGenerator:
             data = self.results
             cv2.imwrite(file_full_path, data, [int(cv2.IMWRITE_JPEG_QUALITY), 100])
 
-            return file_full_path
+            print(f"Succesfully saved {file_full_path}. image_dir contents are now:\n{os.listdir(output_directory)}")
+            st.write(f"Succesfully saved {file_full_path}. image_dir contents are now:\n{os.listdir(output_directory)}")
+
+            return file_full_path   
         except:
             raise Exception(f"""
             Failed to save file at {file_full_path}

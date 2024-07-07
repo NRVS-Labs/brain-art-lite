@@ -189,6 +189,9 @@ class BrowserUI:
                               input_scalar_2=input_scalar_2, 
                               activation_name=activation_name)
         n.run(verbose=True)
+        
+        print(f"\n\nSAVING: at {os.listdir(self.current_file_path_directory)}, image_dir: {self.image_directory}")
+
         image_path = n.save_image(image_name, self.image_directory)
         return image_path        
     
@@ -293,8 +296,11 @@ class BrowserUI:
             # Configure Image Output Directory
 
             default_image_directory = os.path.join(self.current_file_path_directory, "local_gen")
+            
+            self.image_directory = default_image_directory
+            print(f"self.image_directory is {self.image_directory}")
 
-            self.image_directory = st.text_input("Current Image Output Directory: ", default_image_directory, help="Enter the directory where you would like to save generated images. Change nothing if you are fine with the default configuration.")
+            # self.image_directory = st.text_input("Current Image Output Directory: ", default_image_directory, help="Enter the directory where you would like to save generated images. Change nothing if you are fine with the default configuration.")
 
             # --------------------------------------------------------------
 
