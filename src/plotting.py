@@ -5,7 +5,7 @@ import brainflow
 from brainflow.board_shim import BoardShim
 from brainflow.data_filter import DataFilter, AggOperations, FilterTypes, NoiseTypes
 import pandas as pd
-from alive_progress import alive_bar
+# from alive_progress import alive_bar
 
 import matplotlib.pyplot as plt
 
@@ -81,12 +81,12 @@ def generate_raw_plot(filename:str, boardID:int, data:pd.DataFrame, transpose:bo
     
     if show_progress:
         # Generate all channel rows for plot
-        with alive_bar(len(relevant_data)) as bar:
-            for i, channel in relevant_data.iterrows():
-                # print(f"i is {i+1}, Current Channel: {channelNames[i]}")
+        # with alive_bar(len(relevant_data)) as bar:
+        for i, channel in relevant_data.iterrows():
+            # print(f"i is {i+1}, Current Channel: {channelNames[i]}")
 
-                ax.plot(time, channel+(i+1), label=f'{channelNames[i]}')
-                bar()
+            ax.plot(time, channel+(i+1), label=f'{channelNames[i]}')
+            # bar()
     
     else:
         for i, channel in relevant_data.iterrows():
