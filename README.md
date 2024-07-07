@@ -2,6 +2,7 @@
 
 An exploration into pairing Creative Neural Networks with actual neural networks in the human brain using interpreted brain activity
 
+You can access our web - based demo at https://brain-art-cppn-nostream.streamlit.app/
 # Instructions (for development)
 To be added ...
 ## Roadmap
